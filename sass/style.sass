@@ -10,9 +10,11 @@ html,
     height: 100vh
 
 .body
+    font-family: 'Kumbh Sans'
+    font-size: 12px
     display: flex
     align-items: center
-    background: #AD68E9
+    background: linear-gradient(180deg, hsl(273, 75%, 66%), hsl(240, 73%, 65%))
     padding: 0 25px
 
 .main
@@ -31,6 +33,7 @@ html,
         gap: 35px
         padding: 0 25px 45px 25px
         min-height: 400px
+        box-shadow: 0px 10px 10px 0px rgba(34, 60, 80, 0.2)
         @media (min-width: 640px)
             padding: 0 0
             gap: 90px
@@ -46,7 +49,7 @@ html,
         @media (min-width: 640px)
             text-align: left
     &__img
-        background-image: url('/img/bg-pattern-mobile.svg')
+        background-image: url('../img/bg-pattern-mobile.svg')
         background-repeat: no-repeat
         background-position: top center
         position: relative
@@ -54,10 +57,8 @@ html,
         display: grid
         justify-items: center
         @media (min-width: 640px)
-            background-image: url('/img/bg-pattern-desktop.svg')
+            background-image: url('../img/bg-pattern-desktop.svg')
             height: 100%
-            //bottom: 70px
-            //top: 50px
             left: -100px
             background-position: right
             background-size: 570px auto
@@ -66,9 +67,7 @@ html,
         position: absolute
         top: -110px
         max-width: 240px
-        //display: none
         @media (min-width: 640px)
-            //left: 0
             top: 10%
             width: 420px
             max-width: 420px
@@ -94,7 +93,7 @@ html,
         padding-right: 20px
         &::after
             content: ''
-            background-image: url('/img/icon-arrow-down.svg')
+            background-image: url('../img/icon-arrow-down.svg')
             background-repeat: no-repeat
             width: 10px
             height: 7px
@@ -104,9 +103,12 @@ html,
             top: 50%
             transition-duration: 1s
         &:hover
-            color: orange
+            color: hsl(14, 88%, 65%)
+        &:active
+            color: rgba(244, 124, 87, 0.5)
     &__content
         display: none
+        color: hsl(240, 6%, 50%)
 
 .accordion__item--active .accordion__trigger
     font-weight: 700

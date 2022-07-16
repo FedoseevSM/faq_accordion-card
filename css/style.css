@@ -13,13 +13,18 @@ html,
 }
 
 .body {
+  font-family: 'Kumbh Sans';
+  font-size: 12px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: #AD68E9;
+  background: -webkit-gradient(linear, left top, left bottom, from(#af67e9), to(#6565e7));
+  background: -webkit-linear-gradient(top, #af67e9, #6565e7);
+  background: -o-linear-gradient(top, #af67e9, #6565e7);
+  background: linear-gradient(180deg, #af67e9, #6565e7);
   padding: 0 25px;
 }
 
@@ -41,6 +46,8 @@ html,
   gap: 35px;
   padding: 0 25px 45px 25px;
   min-height: 400px;
+  -webkit-box-shadow: 0px 10px 10px 0px rgba(34, 60, 80, 0.2);
+          box-shadow: 0px 10px 10px 0px rgba(34, 60, 80, 0.2);
 }
 
 @media (min-width: 640px) {
@@ -75,7 +82,7 @@ html,
 }
 
 .accordion-section__img {
-  background-image: url("/img/bg-pattern-mobile.svg");
+  background-image: url("../img/bg-pattern-mobile.svg");
   background-repeat: no-repeat;
   background-position: top center;
   position: relative;
@@ -87,7 +94,7 @@ html,
 
 @media (min-width: 640px) {
   .accordion-section__img {
-    background-image: url("/img/bg-pattern-desktop.svg");
+    background-image: url("../img/bg-pattern-desktop.svg");
     height: 100%;
     left: -100px;
     background-position: right;
@@ -145,7 +152,7 @@ html,
 
 .accordion__trigger::after {
   content: '';
-  background-image: url("/img/icon-arrow-down.svg");
+  background-image: url("../img/icon-arrow-down.svg");
   background-repeat: no-repeat;
   width: 10px;
   height: 7px;
@@ -159,11 +166,16 @@ html,
 }
 
 .accordion__trigger:hover {
-  color: orange;
+  color: #f47c57;
+}
+
+.accordion__trigger:active {
+  color: rgba(244, 124, 87, 0.5);
 }
 
 .accordion__content {
   display: none;
+  color: #787887;
 }
 
 .accordion__item--active .accordion__trigger {
