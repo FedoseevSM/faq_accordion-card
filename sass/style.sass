@@ -1,0 +1,120 @@
+*,
+::before,
+::after
+    box-sizing: border-box
+    padding: 0
+    margin: 0
+
+html,
+.body
+    height: 100vh
+
+.body
+    display: flex
+    align-items: center
+    background: #AD68E9
+    padding: 0 25px
+
+.main
+    width: 100%
+
+.accordion-section
+    &__inner
+        position: relative
+        display: grid
+        grid-template-columns: repeat(1, 1fr)
+        margin: 0 auto
+        max-width: 920px
+        min-width: 300px
+        background: #fff
+        border-radius: 25px
+        gap: 35px
+        padding: 0 25px 45px 25px
+        min-height: 400px
+        @media (min-width: 640px)
+            padding: 0 0
+            gap: 90px
+            grid-template-columns: repeat(2, 1fr)
+    &__img-overflow
+        @media (min-width: 640px)
+            overflow: hidden
+    &__main
+        @media (min-width: 640px)
+            padding: 45px 25px 45px 0
+    &__title
+        text-align: center
+        @media (min-width: 640px)
+            text-align: left
+    &__img
+        background-image: url('/img/bg-pattern-mobile.svg')
+        background-repeat: no-repeat
+        background-position: top center
+        position: relative
+        height: 110px
+        display: grid
+        justify-items: center
+        @media (min-width: 640px)
+            background-image: url('/img/bg-pattern-desktop.svg')
+            height: 100%
+            //bottom: 70px
+            //top: 50px
+            left: -100px
+            background-position: right
+            background-size: 570px auto
+    &__img-cover
+        margin: 0 auto
+        position: absolute
+        top: -110px
+        max-width: 240px
+        //display: none
+        @media (min-width: 640px)
+            //left: 0
+            top: 10%
+            width: 420px
+            max-width: 420px
+    &__img-box
+        display: none
+        @media (min-width: 640px)
+            display: block
+            position: absolute
+            top: 38%
+            left: -125px
+            z-index: 555
+            overflow: visible
+
+.accordion
+    max-width: 100%
+    @media (min-width: 640px)
+        max-width: 350px
+    &__trigger
+        cursor: pointer
+        padding: 15px 0
+        border-bottom: 1px solid #eee
+        position: relative
+        padding-right: 20px
+        &::after
+            content: ''
+            background-image: url('/img/icon-arrow-down.svg')
+            background-repeat: no-repeat
+            width: 10px
+            height: 7px
+            display: inline-block
+            position: absolute
+            right: 0
+            top: 50%
+            transition-duration: 1s
+        &:hover
+            color: orange
+    &__content
+        display: none
+
+.accordion__item--active .accordion__trigger
+    font-weight: 700
+    border: 0
+    &:hover
+        color: inherit
+.accordion__item--active .accordion__trigger::after
+    transform: rotate(180deg)
+    transition-duration: 1s
+.accordion__item--active .accordion__content
+    display: block
